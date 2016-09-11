@@ -49,6 +49,7 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(35);
 	var Landing = __webpack_require__(175);
+	var Browse = __webpack_require__(239);
 
 	var _require = __webpack_require__(176);
 
@@ -63,7 +64,8 @@
 	    return React.createElement(
 	      Router,
 	      { history: hashHistory },
-	      React.createElement(Route, { path: '/', component: Landing })
+	      React.createElement(Route, { path: '/', component: Landing }),
+	      React.createElement(Route, { path: 'browseall', component: Browse })
 	    );
 	  }
 	});
@@ -21455,7 +21457,10 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-	// const ReactDOM = require('react-dom');
+
+	var _require = __webpack_require__(176);
+
+	var Link = _require.Link;
 
 
 	var Landing = React.createClass({
@@ -21468,6 +21473,11 @@
 	        'h1',
 	        { className: 'title' },
 	        'Computers Emporium'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/browseall', className: 'browse-all' },
+	        'Browse All'
 	      )
 	    );
 	  }
@@ -27130,6 +27140,31 @@
 
 	exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 	module.exports = exports['default'];
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Browse = React.createClass({
+	  displayName: 'Browse',
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'container' },
+	      React.createElement(
+	        'h1',
+	        null,
+	        'All Items'
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Browse;
 
 /***/ }
 /******/ ]);
